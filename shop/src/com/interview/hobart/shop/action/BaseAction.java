@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 
 import com.interview.hobart.shop.service.AccountService;
 import com.interview.hobart.shop.service.CategoryService;
+import com.interview.hobart.shop.service.ProductService;
 import com.interview.hobart.shop.util.FileImage;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -67,8 +68,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	protected CategoryService categoryService;
 	@Resource
 	protected AccountService accountService;
-//	@Resource
-//	protected ProductService productService;
+	@Resource
+	protected ProductService productService;
 //	@Resource
 //	protected ForderService forderService;
 //	@Resource
