@@ -49,22 +49,22 @@ public class CategoryAction extends BaseAction<CategoryInfo> {
 	}
 
 	@Action(value = "/category_update")
-	public void update() {
+	public void update() throws Exception {
 		categoryService.update(model);
 	}
 
 	@Action(value = "/category_deleteByIds", results = {
 			@Result(name = "stream", type = "stream", params = { "inputName", "inputStream" }) })
-	public String deleteByIds() {
+	public String deleteByIds() throws Exception {
 		categoryService.deleteByIds(ids);
 		// 如果删除成功就会往下执行，我们将"true"以流的形式传给前台
 		inputStream = new ByteArrayInputStream("true".getBytes());
 		return "stream";
 	}
 
-	@Action(value = "category_query", results = { @Result(name = "jsonList", type = "json", params = { "root",
+	@Action(value = "/category_query", results = { @Result(name = "jsonList", type = "json", params = { "root",
 			"jsonList", "excludeProperties", "rows\\[\\d+\\]\\.account" }) })
-	public String query() {
+	public String query() throws Exception {
 		jsonList = categoryService.query();
 		return "jsonList";
 	}
