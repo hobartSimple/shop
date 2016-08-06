@@ -1,4 +1,4 @@
-package com.interview.hobart.shop.util;
+package com.interview.hobart.shop.model;
 
 import java.io.File;
 

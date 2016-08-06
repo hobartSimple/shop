@@ -40,9 +40,9 @@
 					handler: function(){
 						parent.$("#win").window({
 							title:"添加类别",
-							width:650,
-							height:600,
-							content:'<iframe src="send_product_save" frameborder="0" width="100%" height="100%"/>'
+							width:550,
+							height:480,
+							content:'<iframe src="send_product_save" frameborder="0" width="100%" height="100%" scrolling="no"/>'
 						});
 					}
 				},'-',{

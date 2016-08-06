@@ -21,5 +21,7 @@ public interface CategoryService {
 	public void save(CategoryInfo model);
 
 	public void update(CategoryInfo model);
+
+	public List<CategoryInfo> query();
 }
 

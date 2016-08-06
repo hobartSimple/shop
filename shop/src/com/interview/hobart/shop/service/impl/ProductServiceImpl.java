@@ -23,5 +23,10 @@ public class ProductServiceImpl implements ProductService {
 	public Long getCount(String type) {
 		return productDao.getCount(type);
 	}
+
+	@Override
+	public void save(ProductInfo model) {
+		productDao.save(model);
+	}
 	
 }

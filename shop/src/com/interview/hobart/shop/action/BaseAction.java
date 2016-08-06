@@ -13,10 +13,11 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.interview.hobart.shop.model.FileImage;
 import com.interview.hobart.shop.service.AccountService;
 import com.interview.hobart.shop.service.CategoryService;
 import com.interview.hobart.shop.service.ProductService;
-import com.interview.hobart.shop.util.FileImage;
+import com.interview.hobart.shop.util.FileUpload;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -84,8 +85,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 //	protected MessageUtil messageUtil;
 	
 	//上传文件工具类
-//	@Resource
-//	protected FileUpload fileUpload;
+	@Resource
+	protected FileUpload fileUpload;
 
 	//域对象
 	protected Map<String, Object> request;
@@ -135,7 +136,6 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	}
 	
 	public Map<String, Object> getPageMap() {
-		System.out.println("--getPage--");
 		return pageMap;
 	}
 	public String getIds() {

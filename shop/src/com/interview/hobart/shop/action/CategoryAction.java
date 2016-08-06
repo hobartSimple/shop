@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import com.interview.hobart.shop.entity.CategoryInfo;
 
 @Controller
-@ParentPackage(value="json-default")
+@ParentPackage(value = "json-default")
 public class CategoryAction extends BaseAction<CategoryInfo> {
 
 	/**
@@ -26,7 +26,9 @@ public class CategoryAction extends BaseAction<CategoryInfo> {
 		return "aindex";
 	}
 
-	@Action(value = "/category_queryJoinAccount", results = { @Result(name = "jsonMap", type = "json", params={"root","pageMap","excludeProperties","rows\\[\\d+\\]\\.account\\.pass,rows\\[\\d+\\]\\.account\\.name"}) })
+	@Action(value = "/category_queryJoinAccount", results = {
+			@Result(name = "jsonMap", type = "json", params = { "root", "pageMap", "excludeProperties",
+					"rows\\[\\d+\\]\\.account\\.pass,rows\\[\\d+\\]\\.account\\.name" }) })
 	public String queryJoinAccount() throws Exception {
 		// 用来存储分页的数据
 		pageMap = new HashMap<String, Object>();
@@ -36,26 +38,34 @@ public class CategoryAction extends BaseAction<CategoryInfo> {
 		pageMap.put("rows", categoryList); // 存储为JSON格式
 		// 根据关键字查询总记录数
 		Long total = categoryService.getCount(model.getType());
-//		System.out.println(total+"===========================");
+		// System.out.println(total+"===========================");
 		pageMap.put("total", total); // 存储为JSON格式
 		return "jsonMap";
 	}
-	
+
 	@Action(value = "/category_save")
-	public void save()  throws Exception {
+	public void save() throws Exception {
 		categoryService.save(model);
 	}
-	
+
 	@Action(value = "/category_update")
 	public void update() {
 		categoryService.update(model);
 	}
 
-	@Action(value = "/category_deleteByIds", results={@Result(name="stream",type="stream", params={"inputName","inputStream"})})
+	@Action(value = "/category_deleteByIds", results = {
+			@Result(name = "stream", type = "stream", params = { "inputName", "inputStream" }) })
 	public String deleteByIds() {
 		categoryService.deleteByIds(ids);
-		//如果删除成功就会往下执行，我们将"true"以流的形式传给前台
+		// 如果删除成功就会往下执行，我们将"true"以流的形式传给前台
 		inputStream = new ByteArrayInputStream("true".getBytes());
 		return "stream";
+	}
+
+	@Action(value = "category_query", results = { @Result(name = "jsonList", type = "json", params = { "root",
+			"jsonList", "excludeProperties", "rows\\[\\d+\\]\\.account" }) })
+	public String query() {
+		jsonList = categoryService.query();
+		return "jsonList";
 	}
 }

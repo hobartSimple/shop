@@ -9,4 +9,6 @@ public interface ProductService {
     public List<ProductInfo> queryJoinCategory(String type, int page, int size); //使用商品的名称查询  
     //根据关键字查询总记录数  
     public Long getCount(String type);
+    
+	public void save(ProductInfo model);
 }

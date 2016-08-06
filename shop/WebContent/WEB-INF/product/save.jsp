@@ -107,7 +107,7 @@
   </head>
   
   <body>
-	  <form title="添加商品" id="ff" method="post" enctype="multipart/form-data">
+	  <form title="添加商品" id="ff" method="post" enctype="multipart/form-data" style="padding-left: 50px;">
 		<div>
 			<label>商品名称:</label> <input type="text" name="name" />
 		</div>
@@ -131,22 +131,21 @@
 		</div>
 		<div>
 			<label>是否有效:</label>
-			上架:<input type="radio" name="open" checked="checked"value="true" />
+			上架:<input type="radio" name="open" checked="checked" value="true" />
 			下架:<input type="radio" name="open" value="false" />
-					
 		</div>
 		 
-		<div>
-			<label>简单描述:</label>
+		<div style="height: 70px;">
+			<label style="vertical-align: top;">简单描述:</label>
 			<textarea name="remark" cols="40" rows="4"></textarea>
 		</div>
-		<div>
-			<label>详细描述:</label>
+		<div style="height: 125px;">
+			<label style="vertical-align: top;">详细描述:</label>
 			<textarea name="xremark" cols="40" rows="8"></textarea>
 		</div>
-		<div>
-			<a id="submit" href="#" class="easyui-linkbutton">添 加</a> 
-			<a id="reset" href="#" class="easyui-linkbutton">重 置</a>
+		<div style="padding-left: 100px;'">
+			<a id="submit" href="#" class="easyui-linkbutton" style="padding: 0 25px;">添 加</a> 
+			<a id="reset" href="#" class="easyui-linkbutton" style="padding: 0 25px;margin-left: 20px;">重 置</a>
 		</div>
 	  </form>	
   </body>

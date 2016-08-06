@@ -44,4 +44,9 @@ public class CategoryServiceImpl implements CategoryService {
 	public void update(CategoryInfo model) {
 		categoryDao.update(model);
 	}
+
+	@Override
+	public List<CategoryInfo> query() {
+		return categoryDao.query();
+	}
 }
