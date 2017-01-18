@@ -11,14 +11,14 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author hobart
  *
  */
-@Controller
+@Controller(value="sendAction")
 public class SendAction extends ActionSupport {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@Action(value="send_*_*", results={@Result(name="send",location="/WEB-INF/{1}/{2}.jsp")})
 	public String execute() throws Exception {
 		return "send";

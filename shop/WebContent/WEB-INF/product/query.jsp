@@ -40,10 +40,10 @@
 					handler: function(){
 						parent.$("#win").window({
 							title:"添加类别",
-							width:550,
+							width:500,
 							height:480,
 							content:'<iframe src="send_product_save" frameborder="0" width="100%" height="100%" scrolling="no"/>'
-						});
+						}).center();
 					}
 				},'-',{
 					iconCls: 'icon-edit',
@@ -71,10 +71,11 @@
 							//1. 弹出更新的页面
 							parent.$("#win").window({
 								title:"更新商品",
-								width:650,
-								height:600,
+								width:450,
+								height:480,
+								resize:'center',
 								content:'<iframe src="send_product_update" frameborder="0" width="100%" height="100%"/>'
-							});
+							}).center();
 						 
 						}
 					}
@@ -129,11 +130,10 @@
 			    rowStyler: function(index,row){
 			    	console.info("index" + index + "," + row)
 			    	if(index % 2 == 0) {
-			    		return 'background-color:#fff;';
+			    		return 'background-color:#d9d9c2;color:#000;';
 			    	} else {
-			    		return 'background-color:#c4e1e1;';
+			    		return 'background-color:#c4e1e1;color:#000;';
 			    	}
-			    	
 			    },
 			    frozenColumns:[[
 			        {field:'checkbox',checkbox:true},

@@ -156,5 +156,17 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	public void setFileImage(FileImage fileImage) {
 		this.fileImage = fileImage;
 	}
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+	public void setJsonList(List<T> jsonList) {
+		this.jsonList = jsonList;
+	}
+	public void setPageMap(Map<String, Object> pageMap) {
+		this.pageMap = pageMap;
+	}
+	public void setModel(T model) {
+		this.model = model;
+	}
 	
 }

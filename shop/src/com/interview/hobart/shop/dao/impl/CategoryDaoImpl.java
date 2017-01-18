@@ -51,7 +51,16 @@ public class CategoryDaoImpl extends BaseDaoImpl<CategoryInfo> implements Catego
 
 	@Override
 	public void deleteByIds(String ids) {
-		hibernateTemplate.delete(super.get(Integer.parseInt(ids)));
+		hibernateTemplate.execute(new HibernateCallback<CategoryInfo>() {
+			@Override
+			public CategoryInfo doInHibernate(Session session) throws HibernateException {
+				String hql = "delete from CategoryInfo c where c.id in (:ids)";
+				Query query = session.createQuery(hql);
+				query.setString("ids", ids);
+				query.executeUpdate();
+				return null;
+			}
+		});
 	}
 
 	@Override

@@ -17,13 +17,9 @@
 	<!--面向切面编程 aop -->
 	<!-- 事务处理 tx -->
 
-	<!-- <bean id="date" class="java.util.Date" /> -->
-
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close">
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/shop?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/shop?useUnicode=true&amp;characterEncoding=UTF-8" />
 		<property name="user" value="root" />
 		<property name="password" value="root" />
 		<!--连接池中保留的最大连接数。Default: 15 -->
@@ -50,19 +46,18 @@
 			等方法来提升连接测试的性能。Default: false -->
 		<property name="testConnectionOnCheckout" value="false" />
 	</bean>
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<!-- 可以自动创建数据库表(create),不创建(none) -->
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
-
+				<!-- 后台 打印 sql -->
 				<prop key="hibernate.show_sql">true</prop>
+				<!--  格式化 sql -->
 				<prop key="hibernate.format_sql">true</prop>
-				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
-				</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
 				<prop key="hibernate.cache.use_second_level_cache">true</prop>
 				<prop key="hibernate.cache.use_query_cache">true</prop>
 			</props>
@@ -77,6 +72,20 @@
 	</bean>
 	<context:annotation-config />
 	<context:component-scan base-package="com.interview.hobart.shop" />
+	
+	<!-- <bean id="date" class="java.util.Date" /> -->
+	<bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	 	<property name="locations">
+	 		<array>
+	 			<value>classpath:public.properties</value>
+<!-- 	 			<value>classpath:pay.properties</value> -->
+	 		</array>
+	 	</property>
+	 </bean>
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">  
+        <property name="properties" ref="prop" />  
+    </bean>
+	
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>

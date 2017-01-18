@@ -91,7 +91,7 @@
 							//如果成功了，关闭当前窗口
 							parent.$("#win").window("close");
 							parent.$("iframe[title='商品管理']").get(0).contentWindow.$("#dg").datagrid("reload");
-						}
+						},
 					});
 				}
 			});
@@ -125,9 +125,9 @@
 		</div>
 		
 		<div>
-			<label>加入推荐:</label> 推荐:<input type="radio" name="commend"
-				checked="checked" value="true" />  不推荐:<input type="radio"
-				name="commend" value="false" /> 
+			<label>加入推荐:</label>
+			推荐:<input type="radio" name="commend" checked="checked" value="true" />
+			不推荐:<input type="radio" name="commend" value="false" /> 
 		</div>
 		<div>
 			<label>是否有效:</label>
@@ -143,8 +143,8 @@
 			<label style="vertical-align: top;">详细描述:</label>
 			<textarea name="xremark" cols="40" rows="8"></textarea>
 		</div>
-		<div style="padding-left: 100px;'">
-			<a id="submit" href="#" class="easyui-linkbutton" style="padding: 0 25px;">添 加</a> 
+		<div style="padding-left: 80px;'">
+			<a id="submit" href="#" data-options="iconCls:'icon-add'" class="easyui-linkbutton" style="padding: 0 25px;">添 加</a> 
 			<a id="reset" href="#" class="easyui-linkbutton" style="padding: 0 25px;margin-left: 20px;">重 置</a>
 		</div>
 	  </form>	

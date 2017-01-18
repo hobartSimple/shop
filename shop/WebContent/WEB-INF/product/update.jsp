@@ -94,7 +94,7 @@
   </head>
   
   <body>
-  	<form title="更新商品" id="ff" method="post" enctype="multipart/form-data">
+  	<form title="更新商品" id="ff" method="post" enctype="multipart/form-data" style="margin-left: 25px; margin-top: 30px;">
 	    <div>   
 	        <label for="name">商品名称:</label> <input type="text" name="name" />   
 	    </div>   
@@ -129,8 +129,8 @@
 					
 		</div>
 	    
-	    <div>
-	    	<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">更新</a>  
+	    <div style="padding-left: 120px;">
+	    	<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'" style="padding: 0 25px;">更新</a>  
 	    	<input type="hidden" name="id" />
 	    </div>  `
 	</form>  	

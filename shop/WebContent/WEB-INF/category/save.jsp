@@ -66,8 +66,9 @@
 	        	是<input type="radio" name="hot" value="true" />&nbsp;
 	        	否 <input type="radio" name="hot" value="true" />
 	    </div>  
-	    <div style="padding-left: 65px;">
-	    	<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" style="padding: 0 25px">添加</a>  
+	    <div style="padding-left: 25px;">
+	    	<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" style="padding: 0 25px">添加</a>
+	    	<a id="reset" href="#" class="easyui-linkbutton" style="padding: 0 25px;margin-left: 20px;">重 置</a>
 	    </div>  
 	</form>  	
   </body>

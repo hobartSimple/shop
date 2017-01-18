@@ -4,13 +4,46 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<!-- 开启使用开发模式，详细错误提示 -->
-	<constant name="struts.devMode" value="false" />
+	<constant name="struts.devMode" value="true" />
 	<!-- 将对象交给spring管理 -->
 	<constant name="struts.objectFactory" value="spring" />
+	<!-- 设置默认的locale和字符编码 -->   
+    <constant name="struts.locale" value="zh_CN" />   
 	<!-- 指定资源编码类型 -->
-	<constant name="struts.i18n.encoding" value="UTF-8" />
+    <constant name="struts.i18n.encoding" value="UTF-8" /> 
 	<!-- 指定每次请求到达，重新加载资源文件 -->
-	<constant name="struts.i18n.reload" value="false" />
+<!-- 	<constant name="struts.i18n.reload" value="false" /> -->
 	<!-- 指定每次配置文件更改后，自动重新加载 -->
 <!-- 	<constant name="struts.configuration.xml.reload" value="false" /> -->
+	<!-- 临时文件上传位置  -->
+<!-- 	<constant name="struts.multipart.saveDir" value="/tempfile"/> -->
+	<!-- 
+		配置一：
+		不设置struts.multipart.saveDir
+		这种情况下，临时文件就放在tomcat安装目录下的"work\Catalina\localhost\项目名称"目录下。
+		配置二：
+		<constant name="struts.multipart.saveDir" value="/tempfile"/>
+		  这种情况下，临时文件放在项目所在的根磁盘下的tempfile目录下。
+		如项目放在D盘，则该tempfile临时文件夹就在D盘根目录下。
+		配置三：
+		<constant name="struts.multipart.saveDir" value="tempfile"/>
+		  这种情况比上面少了一个斜杠，这种情况下，临时文件放在项目所在的tomcat的bin目录下的tempfile目录下。
+		如项目放在D:\tomcat\webapps目录，则该tempfile临时文件夹就在D:\tomcat\bin目录下。
+		配置四：
+		<constant name="struts.multipart.saveDir" value="D:/mytemp/tempfile"/>
+		这种情况规定了绝对的路径，这种情况下，临时文件就在所配置的绝对路径了。即D:/mytemp/tempfile目录。
+		注意：mytemp文件夹先得手动建立好，否则会报错。
+		
+		可以看出：以上四种方法都没能将临时目录设置在【项目】之中。
+		第四种方法看似可以做到将绝对路径设置为项目当中的路径，但是如果项目移植到别处，该绝对路径就会找不到，反而会报错，不适合。
+		第三种方法放在tomcat的bin目录下，不伦不类，破坏了tomcat程序的结构，所以也不适合。
+		第二种方法放在根目录下，这样某一天看到这个文件不知道从哪来，和哪个程序有关，被删了也说不定。所以也不适合。
+		算下来第一种方法不算最优，但也算相对较优了。最起码它和项目所在tomcat关联最近且不会破坏tomcat程序结构。
+		所以这个struts.multipart.saveDir干脆不设置了，留下时间做其他的事吧。
+		
+	 -->
+	<!--  -->
+	<constant name="struts.multipart.parser" value="jakarta" />
+	<!-- 设置上传文件最大值  2M -->
+	<constant name="struts.multipart.maxSize" value="20971520"/>
 </struts>

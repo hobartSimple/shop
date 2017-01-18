@@ -53,4 +53,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<listener>
+		<listener-class>com.interview.hobart.shop.listener.InitDataListener</listener-class>
+	</listener>
 </web-app>

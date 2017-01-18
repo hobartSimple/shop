@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.util.UUID;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.aspectj.util.FileUtil;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,25 +23,26 @@ import com.interview.hobart.shop.util.FileUpload;
 public class FileUploadUtil implements FileUpload {
 	
 	//@Value表示去beans.xml文件中找id="prop"的bean，它是通过注解的方式读取properties配置文件的，然后去相应的配置文件中读取key=filePath的值
-	//@Value("#{prop.basePath+prop.filePath}") 
+	@Value("#{prop['basePath']+prop['filePath']}")
+//	@Value("#{prop.basePath+prop.filePath}") 
 	private String filePath;
 	
-	//@Value("#{prop.basePath+prop.bankImagePath}")
+	@Value("#{prop['basePath']+prop['bankImagePath']}")
+//	@Value("#{prop.basePath+prop.bankImagePath}")
 	private String bankImagePath;
 	
-//	public void setFilePath(String filePath) {
-//		System.out.println(filePath);
-//		this.filePath = filePath;
-//	}
-//	
-//	public void setBankImagePath(String bankImagePath) {
-//		System.out.println(bankImagePath);
-//		this.bankImagePath = bankImagePath;
-//	}
+	public void setFilePath(String filePath) {
+		System.out.println("filePath===="+filePath);
+		this.filePath = filePath;
+	}
+	
+	public void setBankImagePath(String bankImagePath) {
+		System.out.println("bankImagePath"+bankImagePath);
+		this.bankImagePath = bankImagePath;
+	}
 	
 	public String[] getBankImage() {
 		String[] list  = new File(bankImagePath).list(new FilenameFilter() {
-			
 			//测试指定文件是否应该包含在某一文件列表中
 			@Override
 			public boolean accept(File dir, String name) {
@@ -57,14 +59,14 @@ public class FileUploadUtil implements FileUpload {
 	@Override
 	public String uploadFile(FileImage fileImage) {
 		//获取新唯一文件名
-		String pic = newFileName(fileImage.getFilename());
+		String pic = newFileName(fileImage.getUploadFilename());
 		try {
-			FileUtil.copyFile(fileImage.getFile(), new File(filePath, pic));
+			FileUtils.copyFile(fileImage.getUpload(), new File(filePath, pic));//第一个参数是上传的文件，第二个参数是将文件拷贝到新路径下 
 			return pic;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		} finally {
-			fileImage.getFile().delete();
+			fileImage.getUpload().delete();
 		}
 	}
 	

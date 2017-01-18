@@ -41,7 +41,7 @@
 							width:350,
 							height:220,
 							content:'<iframe src="send_category_save" frameborder="0" width="100%" height="100%" scrolling="auto"/>'
-						});
+						}).center();
 					}
 				},'-',{
 					iconCls: 'icon-edit',
@@ -68,11 +68,11 @@
 						} else{
 							//1. 弹出更新的页面
 							parent.$("#win").window({
-								title:"添加类别",
+								title:"更新类别",
 								width:350,
 								height:250,
 								content:'<iframe src="send_category_update" frameborder="0" width="100%" height="100%"/>'
-							});
+							}).center();
 							//2. 
 						}
 					}
