@@ -14,10 +14,10 @@ import com.interview.hobart.shop.service.AccountService;
 public class AccountServiceImpl implements AccountService {
 
 	@Resource AccountDao accountDao;
-	
+
 	@Override
 	public List<AccountInfo> query() {
 		return accountDao.query();
 	}
-
+	
 }

@@ -14,11 +14,12 @@ public interface CategoryService {
 	public void deleteByIds(String ids);
 	// 根据boelen值查询热点或非热点类别
 	public List<CategoryInfo> queryByHot(boolean hot);
-
-	public void save(CategoryInfo model);
-
+	
 	public void update(CategoryInfo model);
-
+	
+	public void save(CategoryInfo model);
+	
 	public List<CategoryInfo> query();
+
 }
 

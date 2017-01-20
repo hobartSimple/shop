@@ -46,4 +46,5 @@
 	<constant name="struts.multipart.parser" value="jakarta" />
 	<!-- 设置上传文件最大值  2M -->
 	<constant name="struts.multipart.maxSize" value="20971520"/>
+	
 </struts>

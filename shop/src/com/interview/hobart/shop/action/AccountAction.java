@@ -16,7 +16,8 @@ public class AccountAction extends BaseAction<AccountInfo> {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Action(value="account_query", results={@Result(name = "jsonList", type = "json", params={"root","jsonList","excludeProperties","\\[\\d+\\]\\.pass,\\[\\d+\\]\\.name"})})
+	@Action(value="account_query", results={@Result(name = "jsonList", type = "json", 
+			params={"root","jsonList","excludeProperties","\\[\\d+\\]\\.pass,\\[\\d+\\]\\.name"})})
 	public String query() throws Exception {
 		jsonList = accountService.query();
 		return "jsonList";

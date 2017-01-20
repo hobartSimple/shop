@@ -5,7 +5,11 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.orm.hibernate4.HibernateCallback;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -50,8 +54,15 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> query() {
-		String hql = "from " + clazz.getSimpleName();
-		return (List<T>) hibernateTemplate.find(hql, null);
+		return hibernateTemplate.execute(new HibernateCallback<List<T>>() {
+			@Override
+			public List<T> doInHibernate(Session session) throws HibernateException {
+				String hql = "from " + clazz.getSimpleName();
+				Query query = session.createQuery(hql);
+				return query.list();
+			}
+		});
+			
 	}
 
 }

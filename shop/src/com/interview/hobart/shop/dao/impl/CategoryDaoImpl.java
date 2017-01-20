@@ -2,13 +2,10 @@ package com.interview.hobart.shop.dao.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate4.HibernateCallback;
-import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.interview.hobart.shop.dao.CategoryDao;
@@ -16,9 +13,6 @@ import com.interview.hobart.shop.entity.CategoryInfo;
 
 @Repository("categoryDao")
 public class CategoryDaoImpl extends BaseDaoImpl<CategoryInfo> implements CategoryDao {
-
-	@Resource
-	HibernateTemplate hibernateTemplate;
 
 	@Override
 	public List<CategoryInfo> queryJoinAccount(String type, int page, int size) {

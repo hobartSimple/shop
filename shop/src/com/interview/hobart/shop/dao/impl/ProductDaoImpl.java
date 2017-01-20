@@ -2,27 +2,23 @@ package com.interview.hobart.shop.dao.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate4.HibernateCallback;
-import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.interview.hobart.shop.dao.ProductDao;
-import com.interview.hobart.shop.entity.CategoryInfo;
 import com.interview.hobart.shop.entity.ProductInfo;
 
 @Repository("productDao")
 public class ProductDaoImpl extends BaseDaoImpl<ProductInfo> implements ProductDao {
-	@Resource HibernateTemplate hibernateTemplate;
-
+	
 	// 查询商品信息，级联类别
 	@Override
 	public List<ProductInfo> queryJoinCategory(String name, int page, int size) {
 		return hibernateTemplate.execute(new HibernateCallback<List<ProductInfo>>() {
+			@SuppressWarnings("unchecked")
 			@Override
 			public List<ProductInfo> doInHibernate(Session session) throws HibernateException {
 				String hql = "from ProductInfo p left join fetch p.category where p.name like :name";
@@ -68,6 +64,7 @@ public class ProductDaoImpl extends BaseDaoImpl<ProductInfo> implements ProductD
 	@Override
 	public List<ProductInfo> querByCategoryId(int cid) {
 		return hibernateTemplate.execute(new HibernateCallback<List<ProductInfo>>() {
+			@SuppressWarnings("unchecked")
 			@Override
 			public List<ProductInfo> doInHibernate(Session session) throws HibernateException {
 				String hql = "from ProductInfo p left join fetch p.category where p.commend=true and p.open=true and p.category.id=:cid order by p.date desc";

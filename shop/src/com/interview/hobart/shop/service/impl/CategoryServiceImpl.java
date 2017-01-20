@@ -40,17 +40,18 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public void save(CategoryInfo model) {
-		categoryDao.save(model);
+	public void update(CategoryInfo model) {
+		categoryDao.update(model);
 	}
 
 	@Override
-	public void update(CategoryInfo model) {
-		categoryDao.update(model);
+	public void save(CategoryInfo model) {
+		categoryDao.save(model);
 	}
 
 	@Override
 	public List<CategoryInfo> query() {
 		return categoryDao.query();
 	}
+
 }

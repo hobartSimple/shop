@@ -1,5 +1,6 @@
 package com.interview.hobart.shop.entity;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,14 +13,40 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.stereotype.Component;
 
 /**
  * ProductInfo entity. @author MyEclipse Persistence Tools
  */
+
+//如果使用使用hibernate annoation是使用@Cache(usage=CacheConcurrencyStrategy.)标签，有5种可选的缓存方案： 
+//
+//1，CacheConcurrencyStrategy.NONE 
+//
+//不适用，默认 
+//
+//2.　 CacheConcurrencyStrategy.NONSTRICT_READ_WRITE 
+//
+//更新不频繁几个小时或更长 
+//
+//3，CacheConcurrencyStrategy.READ_ONLY 
+//
+//对于不发生改变的数据使用 [size=large][/size] 
+//
+//4，CacheConcurrencyStrategy.READ_WRITE 
+//
+//基于时间戳判定机制，，对于数据同步要求严格的情况，使用频繁 
+//
+//5，CacheConcurrencyStrategy.TRANSACTIONAL 
+//
+//运行在jta环境种，基于事务 
+
 @Entity
 @Table(name="product_info")
 @Component("productInfo")
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY) 
 public class ProductInfo implements java.io.Serializable {
 
 	// Fields
@@ -28,7 +55,7 @@ public class ProductInfo implements java.io.Serializable {
 	private Integer id;
 	private CategoryInfo category;
 	private String name;
-	private Double price;
+	private BigDecimal price;
 	private String pic;
 	private String remark;
 	private String xremark;
@@ -55,7 +82,7 @@ public class ProductInfo implements java.io.Serializable {
 
 
 	/** full constructor */
-	public ProductInfo(CategoryInfo category, String name, Double price, String pic,
+	public ProductInfo(CategoryInfo category, String name, BigDecimal price, String pic,
 			String remark, String xremark, Date date, Boolean commend,
 			Boolean open) {
 		this.category = category;
@@ -69,7 +96,7 @@ public class ProductInfo implements java.io.Serializable {
 		this.open = open;
 	}
 
-	public ProductInfo(Integer id, String name, Double price, String pic,
+	public ProductInfo(Integer id, String name, BigDecimal price, String pic,
 			String remark, String xremark, Boolean commend, Boolean open) {
 		super();
 		this.id = id;
@@ -115,11 +142,11 @@ public class ProductInfo implements java.io.Serializable {
 	}
 
 	@Column(name = "price", precision = 8)
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 

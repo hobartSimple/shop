@@ -26,12 +26,6 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.getCount(type);
 	}
 	
-	//保存
-	@Override
-	public void save(ProductInfo model) {
-		productDao.save(model);
-	}
-
 	//根据ids删除多条记录  
 	@Override
 	public void deleteByIds(String ids) {
@@ -44,10 +38,19 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.querByCategoryId(cid);
 	}
 
-	//更新
+	@Override
+	public void save(ProductInfo model) {
+		productDao.save(model);
+	}
+
 	@Override
 	public void update(ProductInfo model) {
 		productDao.update(model);
 	}
-	
+
+	@Override
+	public ProductInfo get(Integer id) {
+		return productDao.get(id);
+	}
+
 }

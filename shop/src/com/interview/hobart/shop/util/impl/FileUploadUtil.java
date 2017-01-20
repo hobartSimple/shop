@@ -6,7 +6,6 @@ import java.util.UUID;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.aspectj.util.FileUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +14,8 @@ import com.interview.hobart.shop.util.FileUpload;
 
 
 /**
- * @Description: TODO(实现文件上传的业务逻辑)
+ * @Description: 
+ * (实现文件上传的业务逻辑)
  * @author Ni Shengwu
  *
  */
