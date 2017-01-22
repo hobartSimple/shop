@@ -17,7 +17,7 @@ public class UserDaoImpl extends BaseDaoImpl<UserInfo> implements UserDao {
 		return hibernateTemplate.execute(new HibernateCallback<UserInfo>() {
 			@Override
 			public UserInfo doInHibernate(Session session) throws HibernateException {
-				String hql = "from User u where u.login=:login and u.pass=:pass"; 
+				String hql = "from UserInfo u where u.login=:login and u.pass=:pass"; 
 				Query query = session.createQuery(hql);
 				query.setString("login", user.getLogin());  
 	            query.setString("pass", user.getPass());

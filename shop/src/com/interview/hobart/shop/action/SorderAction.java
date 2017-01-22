@@ -1,5 +1,6 @@
 package com.interview.hobart.shop.action;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -20,7 +21,7 @@ public class SorderAction extends BaseAction<SorderInfo>{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Action(value="/sorder_addSorder", results = {@Result(name="showCart", location="user/showCart.jsp")})
+	@Action(value="/sorder_addSorder", results = {@Result(name="showCart", location="/user/showCart.jsp")})
 	public String addSorder() {
 
 		// 1. 根据product.id获取相应的商品数据
@@ -41,5 +42,18 @@ public class SorderAction extends BaseAction<SorderInfo>{
 		// 5. 把新的购物车存储到session中
 		session.put("forder", forder);
 		return "showCart";
+	}
+	
+	//根据商品编号更新商品数量
+	@Action(value="/sorder_updateSorder")
+	public String updateSorder() {
+		ForderInfo forder = (ForderInfo) session.get("forder");
+		forder = sorderService.updateSorder(model, forder);
+		//计算新的总价格
+		forder.setTotal(forderService.cluTotal(forder));
+		session.put("forder", forder);
+		//以流的形式返回新的总价格
+		inputStream = new ByteArrayInputStream(forder.getTotal().toString().getBytes());
+		return "stream";
 	}
 }

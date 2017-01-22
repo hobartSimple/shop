@@ -3,12 +3,14 @@ package com.interview.hobart.shop.action;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.interview.hobart.shop.entity.AccountInfo;
 
-@Controller
+@Controller("accountAction")
 @ParentPackage(value="json-default")
+@Scope("prototype")
 public class AccountAction extends BaseAction<AccountInfo> {
 	
 	/**

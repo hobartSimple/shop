@@ -10,7 +10,8 @@ import com.interview.hobart.shop.entity.SorderInfo;
 @Repository("sorderDao")
 public class SorderDaoImpl extends BaseDaoImpl<SorderInfo> implements SorderDao {
 
-	 @Override  
+	//添加购物项，返回新的购物车  
+	@Override  
 	public ForderInfo addSorder(ForderInfo forder, ProductInfo product) {
 		boolean isHave = false; // 用来标记有没有重复购物项
 		// 拿到当前的购物项
@@ -34,7 +35,8 @@ public class SorderDaoImpl extends BaseDaoImpl<SorderInfo> implements SorderDao 
         }  
 		return forder;
 	}
-	  
+	 
+	//把商品数据转化为购物项  
     @Override  
     public SorderInfo productToSorder(ProductInfo product) {  
     	SorderInfo sorder = new SorderInfo();  
@@ -43,6 +45,17 @@ public class SorderDaoImpl extends BaseDaoImpl<SorderInfo> implements SorderDao 
         sorder.setPrice(product.getPrice());  
         sorder.setProduct(product);  
         return sorder;  
-    }  
+    }
+
+	//根据商品编号更新商品数量
+	@Override
+	public ForderInfo updateSorder(SorderInfo sorder, ForderInfo forder) {
+		for(SorderInfo temp : forder.getSorders()) {
+			if(temp.getProduct().getId().equals(sorder.getProduct().getId())) {
+				temp.setNumber(sorder.getNumber());
+			}
+		}
+		return forder;
+	}  
 
 }
