@@ -2,7 +2,8 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-	<%@ include file="/public/head.jspf" %>
+	<%@ include file="/public/taglibs.jspf" %>
+	<%@ include file="/public/head.jspf"%>
 	<style type="text/css">
 		form div {
 			margin:5px;

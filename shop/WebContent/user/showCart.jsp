@@ -2,7 +2,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<%@include file="/public/head.jspf"%>
+	<%@ include file="/public/taglibs.jspf" %>
+	<%@ include file="/public/head.jspf"%>
 	<script type="text/javascript">
 		$(function(){
 			//注册事件

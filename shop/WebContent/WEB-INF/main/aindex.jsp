@@ -2,34 +2,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<%@ include file="/public/head.jspf" %>
-	<style type="text/css">
-		#menu {
-			width:60px;
-			/*border:1px solid red;*/
-		}
-		#menu ul {
-			list-style: none;
-			padding: 0px;
-			margin: 0px;
-		}
-		#menu ul li {
-			border-bottom: 1px solid #fff;
-			
-		}
-		#menu ul li a {
-			/*先将a标签转换为块级元素，才能设置宽和内间距*/
-			display: block;
-			background-color: #00a6ac;
-			color: #fff;
-			padding: 5px;
-			text-decoration: none;
-		}
-		#menu ul li a:hover {
-			background-color: #008792;
-		}
-		
-	</style>
+	<%@ include file="/public/taglibs.jspf" %>
+	<%@ include file="/public/head.jspf"%>
+	<link rel="stylesheet" href="${shop}/css/aindex.css" />
 	
 	<script type="text/javascript">
 		$(function(){
@@ -76,10 +51,8 @@
     			<div title="系统缺省页面" style="padding:10px;">
     				此处以后显示相应的系统信息（当前操作系统的类型，当前项目的域名，硬件的相关配置或者显示报表
     			</div>   
-    			
     		</div>      		    	
 	    </div> 
 	    <div id="win" data-options="collapsible:false,minimizable:false,maximizable:false,modal:true"></div>  
 	</body>  
-
 </html>

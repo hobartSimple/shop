@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="/public/taglibs.jspf"%>
 <div class="header">
 	<div class="header_container">
 		<div class="top_bar clear">
@@ -8,19 +9,43 @@
 				<li><a href="${shop }">首页</a></li>
 				<li><a href="#">我的账户</a></li>
 				<li><a href="${shop }/sorder_addSorder">购物车</a></li>
-				<li><a href="#">注册</a></li>
-				<li class="highlight"><a href="${shop }/user_login">登录</a></li>
+<!-- 				<li><a href="#">注册</a></li> -->
+				<% 
+					UserInfo user = (UserInfo) session.getAttribute("user");
+					if(user == null){ 
+				%> 
+					<li class="highlight"><a href="${shop }/user_login">登录</a></li>
+				<% 
+					}else{ 
+				%>
+					<li class="highlight"><s:property/></li>
+				<% 
+					} 
+				%>
 			</ul>
 			<!--头部小导航结束-->
 			<!-- logo -->
 			<h1 class="logo clear fl">
-				<a href="index.html"> <img src="images/logo.png" />
-				</a>
+				<a href="index.html"><img src="images/logo.png" /></a>
 			</h1>
 			<!-- 小购物车 -->
 			<div class="minicart">
 				<a class="minicart_link" href="#"> <span class="item"> <b>0</b>件/
-				</span> <span class="price"> <b>￥${sessionScope.forder.total}</b>
+				</span>
+				<span class="price"> <b>￥
+				<% 
+					ForderInfo forderInfo = (ForderInfo) session.getAttribute("forder");
+					if(forderInfo != null ){
+				%>
+					<%=forderInfo.getTotal() %>
+				<% 
+					}else{ 
+				%>
+					<%=0 %>
+				<% 
+					} 
+				%>
+				</b>
 				</span>
 				</a>
 			</div>

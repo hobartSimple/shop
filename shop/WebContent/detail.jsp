@@ -2,8 +2,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<%@include file="/public/head.jspf"%>
-<link rel="stylesheet" href="${shop}/css/detail.css" />
+	<%@ include file="/public/taglibs.jspf" %>
+	<%@ include file="/public/head.jspf"%>
+	<link rel="stylesheet" href="${shop}/css/detail.css" />
 </head>
 <body>
 	<div class="wrapper">

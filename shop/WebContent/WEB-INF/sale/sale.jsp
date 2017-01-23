@@ -2,7 +2,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<%@ include file="/public/head.jspf" %>
+	<%@ include file="/public/taglibs.jspf" %>
+	<%@ include file="/public/head.jspf"%>
 	<script type="text/javascript" src="${shop }/js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="${shop }/js/jscharts.js"></script>
 	<script type="text/javascript">

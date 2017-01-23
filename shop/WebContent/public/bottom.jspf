@@ -1,4 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="/public/taglibs.jspf"%>
 <div class="footer_container">
 	<div class="footer">
 		<ul class="footer_links">

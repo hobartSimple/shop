@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="/public/head.jspf" %>
+	<%@ include file="/public/taglibs.jspf" %>
+	<%@ include file="/public/head.jspf"%>
 </head>
 <body>
 	ok!<br>

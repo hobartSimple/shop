@@ -2,12 +2,13 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<%@include file="/public/head.jspf"%>
-<style type="text/css">
-#dd div {
-	padding: 5px;
-}
-</style>
+	<%@ include file="/public/taglibs.jspf" %>
+	<%@ include file="/public/head.jspf"%>
+	<style type="text/css">
+	#dd div {
+		padding: 5px;
+	}
+	</style>
 <body>
 	<div class="wrapper">
 		<!--头部开始-->

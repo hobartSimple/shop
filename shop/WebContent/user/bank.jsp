@@ -2,6 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<%@ include file="/public/taglibs.jspf" %>
 <%@ include file="/public/head.jspf"%>
 </head>
 <body>
