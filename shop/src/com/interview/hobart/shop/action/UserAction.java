@@ -13,9 +13,9 @@ public class UserAction extends BaseAction<UserInfo> {
 
 	private static final long serialVersionUID = -1735178903148713102L;
 	
-	@Action(value="user_login", results={@Result(name="login", location="/ulogin.jsp"),
-			@Result(name="index", location="/index.jsp"),
-			@Result(name="goURL", type="redirect", location="/index.jsp")})
+	@Action(value="user_login", results={@Result(name="login", type="redirect",location="/ulogin.jsp"),
+			@Result(name="index", type="redirect", location="/index.jsp"),
+			@Result(name="goURL", type="redirect", location="${#session.goURL}")})
 	public String login() {  
         //进行登陆的判断  
         model = userService.login(model);  

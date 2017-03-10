@@ -97,18 +97,21 @@
   <body>
   	<form title="更新商品" id="ff" method="post" enctype="multipart/form-data" style="margin-left: 25px; margin-top: 30px;">
 	    <div>   
-	        <label for="name">商品名称:</label> <input type="text" name="name" />   
+	        <label for="name">商品名称:</label>
+	        <input type="text" name="name" />   
 	    </div>   
 	    <div>
-			<label for="price">商品价格:</label> <input type="text" name="price" />
+			<label for="price">商品价格:</label>
+			<input type="text" name="price" />
 		</div>
 		<div>
-			<label>更新图片:</label> <input type="file" name="fileImage.upload" />
+			<label>更新图片:</label>
+			<input type="file" name="fileImage.upload" />
 		</div>
 		<div>   
 	        <label for="account">所属商品类:</label>
-	         <!-- 远程加载管理员数据 -->
-	         <input id="cc" name="category.id" />
+	        <!-- 远程加载管理员数据 -->
+	        <input id="cc" name="category.id" />
 	    </div>
 		<div>
 			<label for="remark">简单描述:</label>

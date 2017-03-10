@@ -60,7 +60,7 @@
 	    </div>   
 	    <div>
 			<label>所属管理员：</label> 
-			<input id="cc" name="account.id"/>
+			<input id="cc" name="account.id" style="width: 120px; height: 20px;"/>
 		</div>
 	    <div>   
 	        <label for="hot">热点:</label>   

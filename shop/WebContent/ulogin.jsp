@@ -22,18 +22,17 @@
 			<div id="dd" class="action_buttonbar" style="text-align: center;">
 				<form method="post" action="${shop}/user_login">
 					<div>
-						<label for="login">账号:&nbsp;</label> <input type="text"
-							name="login" />
+						<label for="login">账号:&nbsp;</label>
+						<input type="text" name="login" />
 					</div>
 					<div>
-						<label for="pass">密码:&nbsp;</label> <input type="text" name="pass" />
+						<label for="pass">密码:&nbsp;</label>
+						<input type="password" name="pass" />
 					</div>
 					<div>${sessionScope.error}</div>
 					<div>
 						<input type="submit" value="登陆" style="width: 60px; height: 30px" />
-						<input type="button" value="注册"
-							onclick="window.open('${shop}/index.jsp','_self')"
-							style="width: 60px; height: 30px" />
+						<input type="button" value="注册" onclick="window.open('${shop}/index.jsp','_self')" style="width: 60px; height: 30px" />
 					</div>
 				</form>
 				<div style="clear: both"></div>

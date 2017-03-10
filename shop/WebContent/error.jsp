@@ -26,12 +26,14 @@
 		</div>
 		<!--导航栏结束-->
 		<div class="section_container">
-			<a href="#"><img class="fade" src="${shop }/images/404_icon.png"></a>
+			<a href="#">
+				<img class="fade" src="${shop }/images/404_icon.png">
+			</a>
 			<div>
 				<h1 class="fade">温馨提示：您访问的地址不存在！</h1>
 				<p class="fade">
-					你正在寻找的页面无法找到。 <a style="opacity: 1;" class="link" href="#"
-						onclick="history.go(-1)">返回</a>
+					你正在寻找的页面无法找到。
+					<a style="opacity: 1;" class="link" href="#" onclick="history.go(-1)">返回</a>
 				</p>
 			</div>
 			<!-- 底部栏 -->

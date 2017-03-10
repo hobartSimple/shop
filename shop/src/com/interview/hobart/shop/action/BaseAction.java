@@ -17,10 +17,13 @@ import com.interview.hobart.shop.model.FileImage;
 import com.interview.hobart.shop.service.AccountService;
 import com.interview.hobart.shop.service.CategoryService;
 import com.interview.hobart.shop.service.ForderService;
+import com.interview.hobart.shop.service.PayService;
 import com.interview.hobart.shop.service.ProductService;
 import com.interview.hobart.shop.service.SorderService;
 import com.interview.hobart.shop.service.UserService;
+import com.interview.hobart.shop.util.EmailUtil;
 import com.interview.hobart.shop.util.FileUpload;
+import com.interview.hobart.shop.util.MessageUtil;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -80,8 +83,10 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	protected SorderService sorderService;
 	@Resource
 	protected UserService userService;
-//	@Resource
-//	protected PayService payService;
+	@Resource
+	protected PayService payService;
+	
+	//util
 //	@Resource 
 //	protected EmailUtil emailUtil;
 //	@Resource 

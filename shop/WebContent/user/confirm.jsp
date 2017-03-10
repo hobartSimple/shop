@@ -46,14 +46,25 @@
 							<th class="align_center" width="20%">数量</th>
 							<th class="align_center" width="15%">小计</th>
 						</tr>
-						<c:forEach items="${sessionScope.forder.sorders}" var="sorder"
-							varStatus="num">
+						<s:iterator value="%{#session.forder.sorders}" var="sorder" status="num">
+							<tr lang="#sorder.product.id">
+								<td class="align_center"><a href="#" class="edit"><s:property value="#num.count"/> </a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</s:iterator>
+						
+						<c:forEach items="${sessionScope.forder.sorders}" var="sorder" varStatus="num">
 							<tr lang="${sorder.product.id}">
-								<td class="align_center"><a href="#" class="edit">${num.count}</a>
+								<td class="align_center">
+									<a href="#" class="edit">${num.count}</a>
 								</td>
-								<td width="80px"><img
-									src="${shop}/files/${sorder.product.pic}" width="80"
-									height="80" /></td>
+								<td width="80px">
+									<img src="${shop}/files/${sorder.product.pic}" width="80" height="80" />
+								</td>
 								<td class="align_left"><a class="pr_name" href="#">${sorder.name}</a>
 								</td>
 								<td class="align_center vline">￥ ${sorder.price}</td>

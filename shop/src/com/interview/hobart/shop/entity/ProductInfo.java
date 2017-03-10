@@ -46,7 +46,6 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="product_info")
 @Component("productInfo")
-@Cache(usage=CacheConcurrencyStrategy.READ_ONLY) 
 public class ProductInfo implements java.io.Serializable {
 
 	// Fields

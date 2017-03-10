@@ -21,4 +21,9 @@ public class ForderServiceImpl implements ForderService {
 		return forderDao.cluTotal(forder);
 	}
 
+	@Override
+	public void save(ForderInfo model) {
+		forderDao.save(model);
+	}
+
 }

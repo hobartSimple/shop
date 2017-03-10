@@ -18,7 +18,6 @@
 		</div>
 		<!--导航栏结束-->
 
-
 		<div class="section_container">
 			<!--左侧导航-->
 			<div id="side_nav">
@@ -41,7 +40,7 @@
 			<!-- 右侧焦点图区域 -->
 			<div id="main_content ">
 				<div>
-					<img src="images/lm_banner_1.jpg" />
+					<img src="${shop}/images/lm_banner_1.jpg" />
 				</div>
 			</div>
 		</div>
@@ -52,11 +51,12 @@
 			<div class="products_list products_slider clear">
 				<!-- 显示类别名称 -->
 				<h2 class="sub_title">${list[0].category.type}</h2>
-				<ul id="first-carousel"
-					class="first-and-second-carousel jcarousel-skin-tango">
+				<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
 					<c:forEach items="${list }" var="product">
-						<li><a href="${shop}/product_get?id=${product.id}"
-							class="product_image"><img src="${shop}/files/${product.pic}" /></a>
+						<li>
+							<a href="${shop}/product_get?id=${product.id}" class="product_image">
+								<img src="${shop}/files/${product.pic}" />
+							</a>
 							<div class="product_info">
 								<h3>
 									<a href="#">商品名称：${product.name }</a>
@@ -64,13 +64,16 @@
 								<small>简单描述：${product.remark}</small>
 							</div>
 							<div class="price_info">
-								<a href="${shop}/sorder_addSorder?product.id=${product.id}"><button>
+								<a href="${shop}/sorder_addSorder?product.id=${product.id}">
+									<button>
 										<span class="pr_add">添加购物车</span>
-									</button></a>
+									</button>
+								</a>
 								<button class="price_add" title="" type="button">
 									<span class="pr_price">￥${product.price}</span>
 								</button>
-							</div></li>
+							</div>
+						</li>
 					</c:forEach>
 				</ul>
 			</div>

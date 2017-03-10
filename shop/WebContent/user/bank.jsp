@@ -52,12 +52,13 @@
 					<div class="pay-inner">
 						<div class="fl">支付方式:</div>
 						<div class="fl yibao-logo">
-							<a href=""><img src="${shop}/files/yibao.jpg" width="110"
-								height="35" alt="" /></a>
+							<a href="">
+								<img src="${shop}/files/yibao.jpg" width="110" height="35" alt="" />
+							</a>
 						</div>
 						<div class="fr blue aa">
-							世界一流的电子支付应用和服务提供商 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="red"
-								href="">如何使用?</a>
+							世界一流的电子支付应用和服务提供商 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a class="red" href="">如何使用?</a>
 						</div>
 
 					</div>
@@ -68,11 +69,10 @@
 						<!--  {fn:indexOf(name,'.'))}  {fn:substring(zip, 6, -1)} -->
 						<div>
 							<ul>
-								<c:forEach items="${applicationScope.bankImageList}"
-									var="bankImage">
-									<li><input type="radio" name="pd_FrpId"
-										value="${fn:substring(bankImage, 0, fn:indexOf(bankImage, '.'))}" />&nbsp;
-										<img src="${shop }/files/bankImages/${bankImage}" /></li>
+								<c:forEach items="${applicationScope.bankImageList}" var="bankImage">
+									<li><input type="radio" name="pd_FrpId" value="${fn:substring(bankImage, 0, fn:indexOf(bankImage, '.'))}" />&nbsp;
+										<img src="${shop }/files/bankImages/${bankImage}" />
+									</li>
 								</c:forEach>
 							</ul>
 						</div>
@@ -83,8 +83,7 @@
 						</div>
 						<div class="pay-submit">
 							<div class="pay-inner">
-								<input type="submit" style="width: 80px; height: 40px;"
-									value="确认支付" />
+								<input type="submit" style="width: 80px; height: 40px;" value="确认支付" />
 							</div>
 						</div>
 					</form>

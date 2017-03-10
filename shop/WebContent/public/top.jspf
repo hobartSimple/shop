@@ -7,46 +7,47 @@
 			<div class="welcom fl">欢迎光临LEISUPET SHOP!</div>
 			<ul class="top_links fr">
 				<li><a href="${shop }">首页</a></li>
-				<li><a href="#">我的账户</a></li>
+<!-- 				                     <li><a href="#">我的账户</a></li> -->
 				<li><a href="${shop }/sorder_addSorder">购物车</a></li>
 <!-- 				<li><a href="#">注册</a></li> -->
-				<% 
-					UserInfo user = (UserInfo) session.getAttribute("user");
-					if(user == null){ 
-				%> 
+				<s:if test="%{#session.user == null }">
 					<li class="highlight"><a href="${shop }/user_login">登录</a></li>
-				<% 
-					}else{ 
-				%>
-					<li class="highlight"><s:property/></li>
-				<% 
-					} 
-				%>
+				</s:if>
+				<s:else>
+					<li class="highlight"><a href="#"><s:property value="#session.user.name"/></a></li>
+				</s:else>
 			</ul>
 			<!--头部小导航结束-->
 			<!-- logo -->
-			<h1 class="logo clear fl">
-				<a href="index.html"><img src="images/logo.png" /></a>
+			<h1 class="logo clear fl" style="margin-top: 10px;">
+				<a href="index.html"><img src="${shop }/images/logo.png" /></a>
 			</h1>
 			<!-- 小购物车 -->
 			<div class="minicart">
-				<a class="minicart_link" href="#"> <span class="item"> <b>0</b>件/
-				</span>
-				<span class="price"> <b>￥
-				<% 
-					ForderInfo forderInfo = (ForderInfo) session.getAttribute("forder");
-					if(forderInfo != null ){
-				%>
-					<%=forderInfo.getTotal() %>
-				<% 
-					}else{ 
-				%>
-					<%=0 %>
-				<% 
-					} 
-				%>
-				</b>
-				</span>
+				<a class="minicart_link" href="#">
+					<span class="item"> 
+						<b>
+							<s:if test="%{#session.forder == null}">
+								0
+							</s:if>
+							<s:else>
+								<s:set value="#session.forder.sorders" name="sorder"/>
+								<s:property value="#sorder.number"/>
+							</s:else>
+						</b>
+						件/
+					</span>
+					<span class="price"> 
+						<b>￥
+							<s:if test="%{#session.forder == null }">
+								0.00
+							</s:if>
+							<s:else>
+								<s:property value="#session.forder.total"/>
+							</s:else>
+						</b>
+						 元 
+					</span>
 				</a>
 			</div>
 			<!-- 小购物车结束 -->

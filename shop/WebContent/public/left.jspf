@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ include file="/public/taglibs.jspf"%>
-<div class="nav">
+<div class="nav" style="margin-top: 20px;">
 	<ul class="primary_nav">
 		<li class="active highlight"><a href="#">女装</a> <!--二级菜单-->
 			<ul class="sub_menu">

@@ -78,13 +78,17 @@
 							<div class="dt">选择颜色：</div>
 							<div class="dd">
 								<div class="item">
-									<b></b> <a href="#none" title="白色"> <img data-img="1"
-										src="images/11.jpg" width="25" height="25" alt="白色 "> <i>白色</i>
+									<b></b> 
+									<a href="#none" title="白色">
+										<img data-img="1" src="images/11.jpg" width="25" height="25" alt="白色 ">
+										<i>白色</i>
 									</a>
 								</div>
 								<div class="item  selected">
-									<b></b> <a href="#none" title="黑色"> <img data-img="1"
-										src="images/22.jpg" width="25" height="25" alt="黑色 "> <i>黑色</i>
+									<b></b>
+									<a href="#none" title="黑色">
+										<img data-img="1" src="images/22.jpg" width="25" height="25" alt="黑色 ">
+										<i>黑色</i>
 									</a>
 								</div>
 							</div>
@@ -93,19 +97,24 @@
 							<div class="dt">选择尺码：</div>
 							<div class="dd">
 								<div class="item">
-									<b></b> <a href="#none" title="S" style="cursor: pointer;">S</a>
+									<b></b>
+									<a href="#none" title="S" style="cursor: pointer;">S</a>
 								</div>
 								<div class="item  selected">
-									<b></b> <a href="#none" title="M" style="cursor: pointer;">M</a>
+									<b></b>
+									<a href="#none" title="M" style="cursor: pointer;">M</a>
 								</div>
 								<div class="item">
-									<b></b> <a href="#none" title="L" style="cursor: pointer;">L</a>
+									<b></b>
+									<a href="#none" title="L" style="cursor: pointer;">L</a>
 								</div>
 								<div class="item">
-									<b></b> <a href="#none" title="XL" style="cursor: pointer;">XL</a>
+									<b></b>
+									<a href="#none" title="XL" style="cursor: pointer;">XL</a>
 								</div>
 								<div class="item">
-									<b></b> <a href="#none" title="XXL" style="cursor: pointer;">XXL</a>
+									<b></b>
+									<a href="#none" title="XXL" style="cursor: pointer;">XXL</a>
 								</div>
 							</div>
 						</li>
@@ -129,11 +138,11 @@
 			<!-- 产品列表 -->
 			<div class="products_list products_slider clear">
 				<h2 class="sub_title">新品发售</h2>
-				<ul id="first-carousel"
-					class="first-and-second-carousel jcarousel-skin-tango">
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_1.jpg" />
-					</a>
+				<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_1.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -144,12 +153,15 @@
 							<button>
 								<span class="pr_add">添加购物车</span>
 							</button>
-							<button class="price_add" title="" type="button"></button>
+							<button class="price_add" title="" type="button">
+							</button>
 							<span class="pr_price">￥76.00</span>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_2.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_2.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -163,10 +175,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_3.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_3.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -180,10 +194,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_5.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_5.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -197,10 +213,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_1.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_1.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -214,10 +232,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_2.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_2.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -231,18 +251,19 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
+						</div>
+					</li>
 				</ul>
 			</div>
 			<!--产品列表结束  -->
 			<!-- 产品列表 -->
 			<div class="products_list products_slider clear">
 				<h2 class="sub_title">新品发售</h2>
-				<ul id="first-carousel"
-					class="first-and-second-carousel jcarousel-skin-tango">
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_1.jpg" />
-					</a>
+				<ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_1.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -256,10 +277,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_2.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_2.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -273,10 +296,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_3.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_3.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -290,10 +315,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_5.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_5.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -307,10 +334,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_1.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_1.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -324,10 +353,12 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
-					<li><a href="#" class="product_image"> <img
-							src="images/pr_l_2.jpg" />
-					</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="product_image">
+							<img src="images/pr_l_2.jpg" />
+						</a>
 						<div class="product_info">
 							<h3>
 								<a href="#">夏季新品长裙</a>
@@ -341,7 +372,8 @@
 							<button class="price_add" title="" type="button">
 								<span class="pr_price">￥76.00</span>
 							</button>
-						</div></li>
+						</div>
+					</li>
 				</ul>
 			</div>
 			<!--产品列表结束  -->
