@@ -15,7 +15,7 @@ import com.interview.hobart.shop.model.SendData;
 
 @Controller("payAction")
 @Scope("prototype")
-public class payAction extends BaseAction<Object> implements ParameterAware {
+public class PayAction extends BaseAction<Object> implements ParameterAware {
 
 	/**
 	 * 
